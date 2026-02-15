@@ -1,6 +1,6 @@
 # CBZReader
 
-A minimalist CBZ/ZIP reader for webtoons and comics.
+A minimal CBZ/ZIP reader for webtoons and comics.
 
 ## Features
 
