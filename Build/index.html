@@ -1,17 +1,113 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>CBZReader</title>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>
+      eruda.init();
+    </script>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header id="header" class="curv-bottom">
+      <div class="header-content">
+        <div class="title">
+          <div class="icon"></div>
+          <span class="app-name">CBZReader</span>
+        </div>
 
-<head>
-    <title>My Page</title>
-    <link rel="stylesheet" data-inline="true" href="./styles/styles.css" />
-</head>
+        <div class="controls">
+          <span id="page-count" class="page-count"></span>
 
-<body>
-    <script type="module" data-inline="true" src="./src/main.js"></script>
-    <h1>Hello, world!</h1>
-    <p>This is a demo page.</p>
-    <button onclick="testFunction()">Click me!</button>
-    <button onclick="outputToPage()">Show a square.</button>
-</body>
+          <button id="toc-button" class="btn btn-icon-only">
+            <div class="btn-icon btn-icon-list"></div>
+          </button>
 
+          <button id="settings-button" class="btn btn-icon-only">
+            <div class="btn-icon btn-icon-settings"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Settings Panel -->
+      <div id="settings-panel" class="settings-panel curv-bottom">
+        <div class="settings-grid">
+          <div class="setting-item">
+            <span>Theme</span>
+            <button id="btn-theme" class="btn btn-small">System</button>
+          </div>
+          <div class="setting-item">
+            <span>Fit Width</span>
+            <button id="btn-fit-width" class="btn btn-small btn-active">
+              Active
+            </button>
+          </div>
+          <div class="setting-item">
+            <span>Original Size</span>
+            <button id="btn-fit-original" class="btn btn-small">Set</button>
+          </div>
+          <div class="setting-item">
+            <span>Gapless (Webtoon Mode)</span>
+            <button id="btn-gapless" class="btn btn-small btn-active">
+              On
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page Navigator -->
+      <div id="toc-panel" class="toc-panel">
+        <div class="toc-header">
+          <span>Pages</span>
+          <button id="toc-close" class="btn btn-icon-only btn-small">
+            &times;
+          </button>
+        </div>
+        <div id="toc-list" class="toc-list"></div>
+      </div>
+    </header>
+
+    <!-- Main Reader Area -->
+    <main id="main-area">
+      <!-- Welcome / Empty State -->
+      <div id="welcome-screen" class="welcome-screen">
+        <label for="file-upload" class="welcome-card">
+          <div class="welcome-icon">
+            <div class="icon-large"></div>
+          </div>
+          <h2>Drop CBZ here</h2>
+          <p>or click to browse</p>
+        </label>
+        <input
+          id="file-upload"
+          type="file"
+          accept=".cbz,.zip"
+          class="file-input"
+        />
+      </div>
+
+      <!-- Loading State -->
+      <div id="loader" class="message">
+        <div class="loader"></div>
+        <p id="loader-text">Unzipping...</p>
+      </div>
+
+      <!-- Images Container -->
+      <div id="reader-container" class="reader-container">
+        <!-- Images injected here -->
+      </div>
+
+      <!-- Scroll to top button -->
+      <button id="scroll-top" class="scroll-top">
+        <div class="btn-icon btn-icon-arrow-up"></div>
+      </button>
+    </main>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>

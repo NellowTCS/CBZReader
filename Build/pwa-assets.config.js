@@ -23,5 +23,5 @@ export default defineConfig({
       padding: 0,
     },
   },
-  images: "public/favicon.png",
+  images: "public/favicon.svg",
 });

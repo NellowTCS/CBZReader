@@ -1,0 +1,14 @@
+export const fileInput = document.getElementById("file-upload");
+export const readerContainer = document.getElementById("reader-container");
+export const welcomeScreen = document.getElementById("welcome-screen");
+export const loader = document.getElementById("loader");
+export const loaderText = document.getElementById("loader-text");
+export const header = document.getElementById("header");
+export const mainArea = document.getElementById("main-area");
+export const tocButton = document.getElementById("toc-button");
+export const settingsButton = document.getElementById("settings-button");
+export const settingsPanel = document.getElementById("settings-panel");
+export const tocPanel = document.getElementById("toc-panel");
+export const tocList = document.getElementById("toc-list");
+export const pageCountEl = document.getElementById("page-count");
+export const scrollTopBtn = document.getElementById("scroll-top");
